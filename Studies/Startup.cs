@@ -28,12 +28,12 @@ namespace Studies
         {
             services.AddControllers();
 
-            services.AddSwaggerGen(s=>
+            services.AddSwaggerGen(s =>
             {
                 s.SwaggerDoc("v1",
                 new OpenApiInfo
                 {
-                    Title= "Api de Estudos",
+                    Title = "Api de Estudos",
                     Version = "v1"
                 });
             });
@@ -53,11 +53,11 @@ namespace Studies
 
             app.UseAuthorization();
 
-app.UseSwagger();
-app.UseSwaggerUI(s=>
-{
-    s.SwaggerEndpoint("v1/swagger.json", "API de Estudos");
-});
+            app.UseSwagger();
+            app.UseSwaggerUI(s =>
+            {
+                s.SwaggerEndpoint("v1/swagger.json", "API de Estudos");
+            });
 
             app.UseEndpoints(endpoints =>
             {
